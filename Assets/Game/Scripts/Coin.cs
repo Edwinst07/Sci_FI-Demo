@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] 
-    private Button textCoin;
     //public bool collectCoin = false;
     [SerializeField]
     private AudioClip _clip;
@@ -25,7 +23,7 @@ public class Coin : MonoBehaviour
 
         if(other.CompareTag("Player")){
 
-            textCoin.gameObject.SetActive(true);
+            _uiManager.TextUIManager(1,true);
 
             if(Input.GetKey("e")){
 
@@ -43,7 +41,7 @@ public class Coin : MonoBehaviour
                 }
 
                 this.gameObject.SetActive(false);
-                textCoin.gameObject.SetActive(false);
+                _uiManager.TextUIManager(1,false);
             }
 
         }
@@ -53,7 +51,7 @@ public class Coin : MonoBehaviour
 
         if(other.CompareTag("Player")){
 
-            textCoin.gameObject.SetActive(false);
+            _uiManager.TextUIManager(1,false);
         }
     }
 

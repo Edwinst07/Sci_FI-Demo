@@ -19,7 +19,8 @@ public class Sharkman_Store : MonoBehaviour
     private void OnTriggerStay(Collider other){
 
         if(other.CompareTag("Player")){
-            // code..
+            
+            
         }
     }
 }

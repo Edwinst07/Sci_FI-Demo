@@ -115,12 +115,4 @@ public class Player : MonoBehaviour
         _uiManager.UpdateAmmo(currentAnmo);
     }
 
-    private void WeaponBuy(){
-
-        if(hasCoin){
-
-        }
-
-    }
-
 }

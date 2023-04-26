@@ -30,6 +30,10 @@ public class UIManager : MonoBehaviour
         inventory.gameObject.SetActive(true);
     }
 
+    public void ChangeCoin(){
+        inventory.gameObject.SetActive(false);
+    }
+
     public void isAmmoText(){
         ammoText.gameObject.SetActive(true);
     }
@@ -45,6 +49,9 @@ public class UIManager : MonoBehaviour
                 break;
                 case 2:
                 textUIManager.GetComponentInChildren<Text>().text = "Buy a weapon press B";
+                break;
+                case 3:
+                textUIManager.GetComponentInChildren<Text>().text = "You have no money";
                 break;
                 default:
                 Debug.Log("option in TextUIManager invalid !!...");

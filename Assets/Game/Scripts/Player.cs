@@ -96,12 +96,18 @@ public class Player : MonoBehaviour
         currentAnmo--;
         _uiManager.UpdateAmmo(currentAnmo);
         if(Physics.Raycast(rayOrigin, out hitInfo)){
-            Debug.Log("Hit: " + hitInfo.transform.name);
+            //Debug.Log("Hit: " + hitInfo.transform.name);
             GameObject hitMarker = Instantiate(_hitMarketPrefab, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
             if(_audioSource.isPlaying == false){
                 _audioSource.Play();
             }
             Destroy(hitMarker, 1f); // Wear Destroy without creating scripts
+
+            Destructable catre = hitInfo.transform.GetComponent<Destructable>();
+
+            if(catre != null){
+                catre.DestroyCrate();
+            }
         }
 
         muzzleFlash.SetActive(true);
